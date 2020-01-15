@@ -22,3 +22,18 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+command_Input=sys.argv[1:]
+
+today = datetime.today()
+
+#if no input then return current year and month
+if command_Input==[]:
+  calendar.prmonth(today.year,today.month)
+else:
+  #if input is 1 the expected return would be current year and month
+  if len(command_Input)==1:
+    calendar.prmonth(today.year, int(command_Input[0]))
+  #
+  else:
+    calendar.prmonth(int(command_Input[1]),int(command_Input[0]))
